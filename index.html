@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        padding-top: 50px;
+        background: linear-gradient(135deg, hsl(36,100%,50%) 10%, hsl(72,100%,50%) 60%, white 90%);
+    }
+    h1{
+        text-align: center;
+        font-style:inherit;
+        font-size: 50px;
+    }
+    label{
+        font-weight: bold;
+        font-size: large;
+    }
+    #main{
+        text-align: center;
+        padding: 50px;
+        font-size: large;
+        font-weight: bold;
+       background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+       
+    }
+    .store{
+        display: inline-block;
+        padding: 5px;
+        background-color: wheat;
+        width: 250px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    #cel{
+        font-size: large;
+        font-weight: bold;
+        
+    }
+    #fer{
+        font-size: large;
+        font-weight: bold;
+    }
+    a{
+        align-items: center;
+    }
+</style>
+<body>
+   
+    <h1> Temperature Converter</h1>
+    <div id="main">
+        <a href="https://www.animatedimages.org/cat-thermometers-1600.htm"><img src="https://www.animatedimages.org/data/media/1600/animated-thermometer-image-0007.gif" border="0" alt="animated-thermometer-image-0007" /></a>
+<br>
+        <label>Celcius</label>
+    <div class="store" >
+<input type="number" value="0" id="cel" class="input">
+    </div>
+    <label>Farenheit</label>
+<div class="store" >
+    <input type="number" value="32"id="fer" class="input">
+</div>
+</div>
+<script>
+var cel = document.getElementById("cel");
+var fer = document.getElementById("fer");
+cel.addEventListener('input', function(){
+    let c = this.value;
+    let f = (c * 9/5) + 32;
+//      if(!Number.isInteger(f)){
+//   f = f.tofixed(4);
+//  }
+    fer.value = f;
+    
+});
+fer.addEventListener('input',function(){
+    let f = this.value;
+    let c = (f - 32) * 5/9;
+//    if(!Number.isInteger(c)){
+//     c = c.tofixed(4);
+//  }
+    cel.value = c;
+    
+});
+</script>
+
+</body>
+</html>
